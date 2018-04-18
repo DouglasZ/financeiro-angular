@@ -1,1 +1,132 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #404C51;
+}
+
+label {
+  font-weight: bold;
+}
+
+a {
+  color: #337AB7;
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.col-valor {
+  width: 120px;
+  text-align: right;
+}
+
+.col-data {
+  width: 120px;
+  text-align: center;
+}
+
+.col-acoes {
+  width: 90px;
+  text-align: center;
+}
+
+.column-status {
+  text-align: center;
+}
+
+@media (max-width: 560px) {
+  .column-status {
+    display: inline;
+  }
+}
+
+/*body {*/
+/*margin: 0;*/
+/*font-family: Arial, Helvetica, sans-serif;*/
+/*color: #404C51;*/
+/*}*/
+
+/*a {*/
+/*color: #337ab7;*/
+/*text-decoration: none;*/
+/*}*/
+
+/*a:hover, a:focus {*/
+/*text-decoration: underline;*/
+/*}*/
+
+/*label {*/
+/*font-weight: bold;*/
+/*}*/
+
+/*.ui-dropdown-filter-container {*/
+/*width: 100%;*/
+/*}*/
+
+/*!*.ui-inputtext:focus {*!*/
+/*!*background: #FFFF99;*!*/
+/*!*}*!*/
+
+/*.ui-datatable tbody > tr.ui-widget-content.ui-datatable-odd {*/
+/*background-color: white;*/
+/*}*/
+
+/*.ui-datatable tbody > tr.ui-widget-content:hover {*/
+/*background-color: #e7eeff;*/
+/*}*/
+
+/*.ui-datatable tbody > tr.ui-widget-content {*/
+/*height: 20px;*/
+/*}*/
+
+/*.ui-datatable .ui-datatable-thead > tr > th, .ui-datatable .ui-datatable-tfoot > tr > td {*/
+/*font-weight: bold;*/
+/*height: 30px;*/
+/*text-transform: uppercase;*/
+/*font-size: 12px;*/
+/*}*/
+
+/*.ui-datatable .ui-datatable-data > tr > td {*/
+/*height: 27px;*/
+/*font-size: 12px;*/
+/*text-transform: uppercase;*/
+/*}*/
+
+/*.ui-paginator .ui-paginator-page, .ui-paginator .ui-paginator-next, .ui-paginator .ui-paginator-last, .ui-paginator .ui-paginator-first, .ui-paginator .ui-paginator-prev {*/
+/*font-size: 12px;*/
+/*}*/
+
+/*@media (min-width: 1300px) {*/
+/*.container {*/
+/*width: 1290px;*/
+/*margin: 0 auto;*/
+/*}*/
+/*}*/
+
+/*.col-valor {*/
+/*width: 120px;*/
+/*text-align: right;*/
+/*}*/
+
+/*.col-data {*/
+/*width: 120px;*/
+/*text-align: center;*/
+/*}*/
+
+/*.col-acoes {*/
+/*width: 90px;*/
+/*text-align: center;*/
+/*}*/
+
+/*.ui-button-icon-only {*/
+/*height: 20px;*/
+/*width: 20px;*/
+/*}*/
