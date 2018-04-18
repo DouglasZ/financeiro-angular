@@ -20,7 +20,7 @@ const routes: Routes = [
     data: { roles: ['ROLE_CADASTRAR_PESSOA'] }
   },
   {
-    path: 'pessoas/:codigo',
+    path: 'pessoas/:id',
     component: PessoaCadastroComponent,
     canActivate: [AuthGuard],
     data: { roles: ['ROLE_CADASTRAR_PESSOA'] }
