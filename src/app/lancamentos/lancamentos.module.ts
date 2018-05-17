@@ -1,16 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { ButtonModule } from 'primeng/components/button/button';
-import { CalendarModule } from 'primeng/components/calendar/calendar';
 import { CurrencyMaskModule } from 'ng2-currency-mask';
-import { DataTableModule } from 'primeng/components/datatable/datatable';
-import { DropdownModule } from 'primeng/components/dropdown/dropdown';
-import { InputTextModule } from 'primeng/components/inputtext/inputtext';
-import { InputTextareaModule } from 'primeng/components/inputtextarea/inputtextarea';
-import { SelectButtonModule } from 'primeng/components/selectbutton/selectbutton';
-import { TooltipModule } from 'primeng/components/tooltip/tooltip';
+
+import { ButtonModule } from 'primeng/button';
+import { CalendarModule } from 'primeng/calendar';
+import { TableModule } from 'primeng/table';
+import { DropdownModule } from 'primeng/dropdown';
+import { InputTextModule } from 'primeng/inputtext';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { SelectButtonModule } from 'primeng/selectbutton';
+import { TooltipModule } from 'primeng/tooltip';
+import { FileUploadModule } from 'primeng/fileupload';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 import { LancamentosPesquisaComponent } from './lancamentos-pesquisa/lancamentos-pesquisa.component';
 import { LancamentoCadastroComponent } from './lancamento-cadastro/lancamento-cadastro.component';
@@ -24,15 +27,21 @@ import { LancamentosRoutingModele } from './lancamentos-routing.modele';
     ButtonModule,
     CalendarModule,
     CurrencyMaskModule,
-    DataTableModule,
+    TableModule,
     DropdownModule,
+
     FormsModule,
+    ReactiveFormsModule,
+
     InputTextModule,
     InputTextareaModule,
     SelectButtonModule,
     TooltipModule,
 
     SharedModule,
+
+    FileUploadModule,
+    ProgressSpinnerModule,
 
     LancamentosRoutingModele
   ],
