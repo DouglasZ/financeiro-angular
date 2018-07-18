@@ -1,7 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
-import { ToastyService } from 'ng2-toasty';
+import { MessageService } from 'primeng/components/common/messageservice';
+
 import { ConfirmationService, LazyLoadEvent } from 'primeng/api';
 
 import { ErrorHandlerService } from '../../core/error-handler.service';
@@ -23,7 +24,7 @@ export class LancamentosPesquisaComponent implements OnInit {
 
   constructor(private lancamentoService: LancamentoService,
               private errorHandler: ErrorHandlerService,
-              private toasty: ToastyService,
+              private messageService: MessageService,
               private confirmation: ConfirmationService,
               private title: Title,
               private auth: AuthService) {
@@ -68,7 +69,8 @@ export class LancamentosPesquisaComponent implements OnInit {
         } else {
           this.pesquisar(this.grid.first / this.grid.rows);
         }
-        this.toasty.success('Lançamento excluído com sucesso.');
+        this.messageService.add({ severity: 'success', detail: 'Lançamento excluído com sucesso.' });
+
       })
       .catch(erro => this.errorHandler.handle(erro));
   }

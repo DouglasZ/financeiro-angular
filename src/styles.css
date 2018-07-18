@@ -18,6 +18,10 @@ a:hover, a:focus {
   text-decoration: underline;
 }
 
+a, button {
+  margin-right: .25em;
+}
+
 .container {
   max-width: 1170px;
   margin: 0 auto;

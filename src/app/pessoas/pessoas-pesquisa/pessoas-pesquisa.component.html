@@ -48,12 +48,11 @@
               </a>
             </td>
             <td>
-              <button pButton icon="fa-pencil" pTooltip="Editar"
+              <a pButton icon="fa fa-pencil" pTooltip="Editar"
                       tooltipPosition="top"
-                      [routerLink]="['/pessoas', pessoa.id]"
-                      [disabled]="!auth.temPermissao('ROLE_CADASTRAR_PESSOA')">
-              </button>
-              <button pButton icon="fa-trash" pTooltip="Excluir"
+                      [routerLink]="['/pessoas', pessoa.id]">
+              </a>
+              <button pButton icon="fa fa-trash" pTooltip="Excluir"
                       (click)="confirmarExclusao(pessoa)"
                       [disabled]="!auth.temPermissao('ROLE_REMOVER_PESSOA')"
                       tooltipPosition="top">

@@ -1,35 +1,34 @@
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Http, RequestOptions } from '@angular/http';
 
-import { AuthConfig, AuthHttp } from 'angular2-jwt';
+import { JwtModule } from '@auth0/angular-jwt';
+
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 
 import { LoginFormComponent } from './login-form/login-form.component';
 import { SegurancaRoutingModule } from './seguranca-rounting.module';
-import { MoneyHttp } from './money-http';
-import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
 import { LogoutService } from './logout.service';
+import { environment } from '../../environments/environment';
 
-export function authHttpServiceFactory(auth: AuthService, http: Http, options: RequestOptions) {
-
-  // Adicionamos o cabeçalho global para todas as requisições
-  const config = new AuthConfig({
-    globalHeaders: [
-      { 'Content-Type': 'application/json' }
-    ]
-  });
-
-  return new MoneyHttp(auth, config, http, options);
+export function tokenGetter() {
+  return localStorage.getItem('token');
 }
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        whitelistedDomains: environment.tokenWhitelistedDomains,
+        blacklistedRoutes: environment.tokenBlacklistedRoutes
+      }
+    }),
 
     InputTextModule,
     ButtonModule,
@@ -40,11 +39,6 @@ export function authHttpServiceFactory(auth: AuthService, http: Http, options: R
     LoginFormComponent
   ],
   providers: [
-    {
-      provide: AuthHttp,
-      useFactory: authHttpServiceFactory,
-      deps: [AuthService, Http, RequestOptions]
-    },
     AuthGuard,
     LogoutService
   ]

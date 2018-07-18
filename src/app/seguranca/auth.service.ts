@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http } from '@angular/http';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
 
 import { environment } from '../../environments/environment';
 
-import { JwtHelper } from 'angular2-jwt';
+import { JwtHelperService } from '@auth0/angular-jwt';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
@@ -12,33 +12,33 @@ export class AuthService {
   oauthTokenUrl: string;
   jwtPayload: any;
 
-  constructor(private http: Http,
-              private jwtHelper: JwtHelper) {
+  constructor(private http: HttpClient,
+              private jwtHelper: JwtHelperService) {
     this.oauthTokenUrl = `${environment.apiUrl}/oauth/token`;
     this.carregarToken();
   }
 
   login(usuario: string, senha: string): Promise<void> {
 
-    const headers = new Headers();
-    headers.append('Content-Type', 'application/x-www-form-urlencoded');
-    headers.append('Authorization', 'Basic YW5ndWxhcjpAbmd1bEByMA==');
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'Authorization': 'Basic YW5ndWxhcjpAbmd1bEByMA=='
+    });
 
     const body = `username=${usuario}&password=${senha}&grant_type=password`;
 
     // withCredentials envia e recebe credenciais
     // Usamos o withCredentials para que o Cookies não seja ignorado pelo navegador
     // Pois estamos fazendo uma requisição Cross-site (API port 8080 e Front port 4200)
-    return this.http.post(this.oauthTokenUrl, body, { headers, withCredentials: true })
+    return this.http.post<any>(this.oauthTokenUrl, body, { headers, withCredentials: true })
       .toPromise()
       .then(response => {
-        this.armazenarToken(response.json().access_token);
+        this.armazenarToken(response.access_token);
       })
       .catch(response => {
         if (response.status === 400) {
-          const responseJson = response.json();
 
-          if (responseJson.error === 'invalid_grant') {
+          if (response.error === 'invalid_grant') {
             return Promise.reject('Usuário ou senha inválida.');
           }
         }
@@ -49,19 +49,20 @@ export class AuthService {
 
   obterNovoAccessToken(): Promise<void> {
 
-    const headers = new Headers();
-    headers.append('Content-Type', 'application/x-www-form-urlencoded');
-    headers.append('Authorization', 'Basic YW5ndWxhcjpAbmd1bEByMA==');
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'Authorization': 'Basic YW5ndWxhcjpAbmd1bEByMA=='
+    });
 
     const body = 'grant_type=refresh_token';
 
     // withCredentials envia e recebe credenciais
     // Usamos o withCredentials para que o Cookies não seja ignorado pelo navegador
     // Pois estamos fazendo uma requisição Cross-site (API port 8080 e Front port 4200)
-    return this.http.post(this.oauthTokenUrl, body, { headers, withCredentials: true })
+    return this.http.post<any>(this.oauthTokenUrl, body, { headers, withCredentials: true })
       .toPromise()
       .then(response => {
-        this.armazenarToken(response.json().access_token);
+        this.armazenarToken(response.access_token);
 
         console.log('Novo access token criado.');
         return Promise.resolve(null);

@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
 
-import { ToastyService } from 'ng2-toasty';
+import { MessageService } from 'primeng/components/common/messageservice';
 
 import { CategoriaService } from '../../categorias/categoria.service';
 import { ErrorHandlerService } from '../../core/error-handler.service';
@@ -39,7 +39,7 @@ export class LancamentoCadastroComponent implements OnInit {
   constructor(private categoriaService: CategoriaService,
               private pessoaService: PessoaService,
               private lancamentoService: LancamentoService,
-              private toasty: ToastyService,
+              private messageService: MessageService,
               private errorHandler: ErrorHandlerService,
               private route: ActivatedRoute,
               private router: Router,
@@ -91,7 +91,7 @@ export class LancamentoCadastroComponent implements OnInit {
   }
 
   erroUpload(event) {
-    this.toasty.error('Ocorreu um problema ao tentar enviar o anexo');
+    this.messageService.add({ severity: 'error', detail: 'Ocorreu um problema ao tentar enviar o anexo' });
 
     this.uploadEmAndamento = false;
   }
@@ -179,7 +179,7 @@ export class LancamentoCadastroComponent implements OnInit {
   adicionarLancamento() {
     this.lancamentoService.adicionar(this.formulario.value)
       .then(lancamento => {
-        this.toasty.success('Lançamento adicionado com sucesso.');
+        this.messageService.add({ severity: 'success', detail: 'Lançamento adicionado com sucesso.' });
 
         this.router.navigate(['/lancamentos', lancamento.id]);
       })
@@ -194,7 +194,7 @@ export class LancamentoCadastroComponent implements OnInit {
         // patchValue: vai atualizar somente os atributos configurado no formGroup
         this.formulario.patchValue(lancamento);
 
-        this.toasty.success('Lançamento alterado com sucesso.');
+        this.messageService.add({ severity: 'success', detail: 'Lançamento alterado com sucesso.' });
         this.atualizarTituloEdicao();
       })
       .catch(erro => this.errorHandler.handle(erro));
