@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 import { environment } from '../../environments/environment';
 
-import 'rxjs/add/operator/toPromise';
+
 
 import { Pessoa, Estado, Cidade } from '../core/model';
 import { MoneyHttp } from '../seguranca/money-http';
