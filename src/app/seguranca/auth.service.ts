@@ -4,7 +4,7 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 
 import { JwtHelperService } from '@auth0/angular-jwt';
-import 'rxjs/add/operator/toPromise';
+
 
 @Injectable()
 export class AuthService {

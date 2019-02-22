@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpParams } from '@angular/common/http';
 
 import { environment } from '../../environments/environment';
-import 'rxjs/add/operator/toPromise';
+
 
 import * as moment from 'moment';
 import { Lancamento } from '../core/model';
