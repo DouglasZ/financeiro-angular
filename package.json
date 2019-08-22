@@ -26,6 +26,7 @@
     "@auth0/angular-jwt": "^2.0.0",
     "chart.js": "^2.7.2",
     "core-js": "^2.4.1",
+    "cors": "^2.8.5",
     "font-awesome": "^4.7.0",
     "moment": "^2.21.0",
     "ng2-currency-mask": "^5.2.0",
@@ -42,7 +43,6 @@
     "@types/jasmine": "~2.8.3",
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",
-    "codelyzer": "^4.0.1",
     "jasmine-core": "~2.8.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~2.0.0",
@@ -55,9 +55,7 @@
     "tslint": "~5.9.1",
     "typescript": "3.2.4"
   },
-  "devDependencies": {
-
-  },
+  "devDependencies": {},
   "engines": {
     "node": "10.15.1",
     "npm": "6.4.1"
