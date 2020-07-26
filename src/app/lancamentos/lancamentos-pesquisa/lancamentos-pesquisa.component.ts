@@ -1,9 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
-import { MessageService } from 'primeng/components/common/messageservice';
-
-import { ConfirmationService, LazyLoadEvent } from 'primeng/api';
+import { ConfirmationService, LazyLoadEvent, MessageService } from 'primeng/api';
 
 import { ErrorHandlerService } from '../../core/error-handler.service';
 import { LancamentoFiltro, LancamentoService } from '../lancamento.service';

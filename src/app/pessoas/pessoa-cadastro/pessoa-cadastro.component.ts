@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
-import { MessageService } from 'primeng/components/common/messageservice';
-
 import { ErrorHandlerService } from '../../core/error-handler.service';
 import { Pessoa } from '../../core/model';
 import { PessoaService } from '../pessoa.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-pessoa-cadastro',

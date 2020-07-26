@@ -77,7 +77,7 @@ export class PessoaService {
     // headers.append('Content-Type', 'application/json');
 
     const headers = new HttpHeaders()
-      .append('Content-Type', 'application-json');
+      .append('Content-Type', 'application/json');
 
     return this.http.put(`${this.pessoasUrl}/${id}/ativo`, ativo, { headers })
       .toPromise()
@@ -88,8 +88,10 @@ export class PessoaService {
     // const headers = new Headers();
     // headers.append('Authorization', 'Basic YWRtaW5AbWFpbC5jb206YWRtaW4=');
     // headers.append('Content-Type', 'application/json');
+    const headers = new HttpHeaders()
+      .append('Content-Type', 'application/json');
 
-    return this.http.post<Pessoa>(this.pessoasUrl, pessoa)
+    return this.http.post<Pessoa>(this.pessoasUrl, pessoa, { headers })
       .toPromise()
       .then(response => response);
   }
@@ -99,8 +101,11 @@ export class PessoaService {
     // headers.append('Authorization', 'Basic YWRtaW5AbWFpbC5jb206YWRtaW4=');
     // headers.append('Content-Type', 'application/json');
 
+    const headers = new HttpHeaders()
+      .append('Content-Type', 'application/json');
+
     return this.http.put<Pessoa>(`${this.pessoasUrl}/${pessoa.id}`,
-      JSON.stringify(pessoa))
+      JSON.stringify(pessoa), { headers })
       .toPromise()
       .then(response => response);
   }

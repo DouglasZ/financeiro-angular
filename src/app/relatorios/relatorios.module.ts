@@ -6,7 +6,7 @@ import { SharedModule } from '../shared/shared.module';
 
 import { RelatoriosRoutingModule } from './relatorios-routing.module';
 import { RelatorioLancamentosComponent } from './relatorio-lancamentos/relatorio-lancamentos.component';
-import { CalendarModule } from 'primeng/primeng';
+import { CalendarModule } from 'primeng/calendar';
 
 @NgModule({
   imports: [

@@ -8,10 +8,9 @@ import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
-import { ConfirmationService } from 'primeng/api';
-import { GrowlModule } from 'primeng/growl';
+import { ConfirmationService, MessageService } from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { MessageService } from 'primeng/components/common/messageservice';
 
 import { AuthService } from '../seguranca/auth.service';
 import { CategoriaService } from '../categorias/categoria.service';
@@ -31,7 +30,7 @@ import { MoneyHttp } from '../seguranca/money-http';
     HttpClientModule,
     RouterModule,
 
-    GrowlModule,
+    ToastModule,
     ConfirmDialogModule,
   ],
   declarations: [
@@ -41,7 +40,7 @@ import { MoneyHttp } from '../seguranca/money-http';
   ],
   exports: [
     NavbarComponent,
-    GrowlModule,
+    ToastModule,
     ConfirmDialogModule
   ],
   providers: [
