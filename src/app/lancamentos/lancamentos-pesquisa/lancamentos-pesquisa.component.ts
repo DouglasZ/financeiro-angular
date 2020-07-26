@@ -20,7 +20,7 @@ export class LancamentosPesquisaComponent implements OnInit {
   filtro = new LancamentoFiltro();
   lancamentos = [];
   // Pegamos a variável tabela do html
-  @ViewChild('tabela') grid;
+  @ViewChild('tabela', { static: true }) grid;
 
   constructor(private lancamentoService: LancamentoService,
               private errorHandler: ErrorHandlerService,
