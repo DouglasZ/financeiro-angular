@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --prod"
+    "heroku-postbuild": "ng build --prod"
   },
   "private": true,
   "dependencies": {
@@ -26,6 +26,7 @@
     "chart.js": "^2.7.2",
     "core-js": "^3.4.2",
     "font-awesome": "^4.7.0",
+    "force-ssl-heroku": "^1.0.2",
     "moment": "^2.18.1",
     "ng2-toasty": "^4.0.3",
     "ngx-currency": "^2.2.2",
