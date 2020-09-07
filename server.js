@@ -1,8 +1,8 @@
 const express = require('express');
-const cors = require('cors');
+var forceSsl = require('force-ssl-heroku');
 const app = express();
 
-app.use(cors());
+app.use(forceSsl);
 app.use(express.static(__dirname + '/dist'));
 
 app.get('/*', function (req, res) {
