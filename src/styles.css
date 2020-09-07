@@ -18,6 +18,18 @@ a:hover, a:focus {
   text-decoration: underline;
 }
 
+a.ui-button:enabled:active {
+  background-color: #005b9f;
+  color: #ffffff;
+  border-color: #005b9f;
+}
+
+a.ui-button:hover {
+  background-color: #116fbf;
+  color: #ffffff !important;
+  border-color: #116fbf;
+}
+
 a, button {
   margin-right: .25em;
 }
@@ -77,6 +89,24 @@ a, button {
   .column-status {
     display: inline;
   }
+}
+
+.col-acoes .ui-button {
+  margin: 1px;
+}
+
+.label-spaced {
+  margin: 5px;
+}
+
+.cadastro-acoes .ui-button {
+  margin-right: 5px;
+}
+
+.relatorio-filtro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /*body {*/
