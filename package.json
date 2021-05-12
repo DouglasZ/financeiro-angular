@@ -23,7 +23,7 @@
     "@angular/platform-browser-dynamic": "9.1.0",
     "@angular/router": "9.1.0",
     "@auth0/angular-jwt": "^3.0.1",
-    "chart.js": "^2.7.2",
+    "chart.js": "^2.9.4",
     "core-js": "^3.4.2",
     "font-awesome": "^4.7.0",
     "force-ssl-heroku": "^1.0.2",
