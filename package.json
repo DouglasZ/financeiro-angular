@@ -27,7 +27,7 @@
     "core-js": "^3.4.2",
     "font-awesome": "^4.7.0",
     "force-ssl-heroku": "^1.0.2",
-    "moment": "^2.18.1",
+    "moment": "^2.29.2",
     "ng2-toasty": "^4.0.3",
     "ngx-currency": "^2.2.2",
     "primeicons": "^2.0.0",
